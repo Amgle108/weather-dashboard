@@ -1,22 +1,25 @@
 # Weather Dashboard
 
-A small weather dashboard that fetches live weather data from the public Open-Meteo API.
+A feature-rich weather dashboard that fetches live weather data from the public Open-Meteo API.
 
 ## Features
 
-- Search by city name
+- Search for any city
 - Current weather summary
-- Hourly forecast for the next several hours
+- Hourly forecast
 - 7-day forecast
-- Temperature unit toggle (`°C` / `°F`)
-- Responsive layout for desktop and mobile
+- °C / °F toggle
+- Dark and light theme
+- Use current location via browser geolocation
+- Save favorite cities in local storage
+- Responsive layout for mobile and desktop
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-- Open-Meteo API (no API key required)
+- Open-Meteo API
 
 ## Run locally
 
@@ -47,7 +50,7 @@ weather-dashboard/
 ├── styles.css
 ├── script.js
 ├── README.md
-└── .gitignore
+├── .gitignore
 ```
 
 ## API used
