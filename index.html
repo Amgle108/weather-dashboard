@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Forecast</p>
+          <h1>Weather Dashboard</h1>
+        </div>
+
+        <div class="toolbar">
+          <form id="search-form" class="search-form" autocomplete="off">
+            <label class="sr-only" for="city-input">Search city</label>
+            <input
+              id="city-input"
+              type="text"
+              name="city"
+              placeholder="Search city"
+              value="Istanbul"
+            />
+            <button type="submit">Search</button>
+          </form>
+
+          <div class="unit-toggle" aria-label="Temperature unit toggle">
+            <button class="unit-btn active" type="button" data-unit="C">°C</button>
+            <button class="unit-btn" type="button" data-unit="F">°F</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="current-weather" class="current-card card hidden" aria-live="polite">
+          <div class="current-header">
+            <div>
+              <p id="location-name" class="location-name">City</p>
+              <p id="current-date" class="current-date">--</p>
+            </div>
+            <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+          </div>
+
+          <div class="current-main">
+            <div>
+              <p class="label">Now</p>
+              <div class="temperature-row">
+                <span id="current-temp" class="current-temp">--</span>
+              </div>
+            </div>
+
+            <div class="current-summary">
+              <p id="weather-condition" class="condition">--</p>
+              <p id="feels-like" class="meta">Feels like --</p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="label">Humidity</span>
+              <strong id="humidity">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Wind</span>
+              <strong id="wind-speed">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Sunrise</span>
+              <strong id="sunrise">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Sunset</span>
+              <strong id="sunset">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <h2>Hourly</h2>
+          </div>
+          <div id="hourly-forecast" class="hourly-forecast" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <h2>7-Day Forecast</h2>
+          </div>
+          <div id="daily-forecast" class="daily-forecast" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Loading weather data...</p>
+    </div>
+
+    <div id="error-message" class="error-message hidden" role="alert"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
